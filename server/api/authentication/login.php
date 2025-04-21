@@ -19,6 +19,7 @@ $data = json_decode($rawData , true) ;
 $username = htmlspecialchars(trim($data["username"] ?? "")) ;
 $password = htmlspecialchars(trim($data["password"] ?? ""));
 
+// Validation Inputs
 require_once __DIR__ . "/../../validation/auth/loginValidation.php" ;
 
 $errors = validateLogin($username , $password) ;
@@ -28,8 +29,11 @@ if(!empty($errors)){
     exit();
 }
 
+// Select From Database
 require_once __DIR__ . "/../../database/queriesAuth/login.php";
 $user = login($username , $password) ;
+
+// Create a token
 if($user){
     unset($user["password"]);
     $payload = [
