@@ -9,9 +9,8 @@ function removeStaf($pdo ,$staf_id , $created_by) {
         $responseLogs = logs($pdo,$created_by , "Remove a Staf") ;
         if($responseLogs == "Add Logs Successfuly"){
             return "Remove Staf Successfuly" ;
-        }else{
-            return $responseLogs ;
         }
+        return $responseLogs ;
     }catch(PDOException $e){
         return $e ;
     }

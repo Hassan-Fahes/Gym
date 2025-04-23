@@ -1,7 +1,7 @@
 <?php
 function allStaf($pdo){
     try{
-        $sql = "SELECT id , full_name , username , address , contact , role  FROM `users` WHERE role != -1" ;
+        $sql = "SELECT id , full_name , username , address , contact , role  FROM `users` WHERE role != -1 AND is_deleted = 0" ;
         $stmt = $pdo->prepare($sql) ;
         $stmt->execute() ;
         $stafs = $stmt->fetchAll(PDO::FETCH_ASSOC) ;

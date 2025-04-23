@@ -1,5 +1,5 @@
 <?php
-function addStafValidation($full_name , $username , $password , $address , $active , $contact ,$role) {
+function addStafValidation($full_name , $username , $password, $address , $active , $contact ,$role) {
     $errors = [] ;
    // 1) Full Name: letters and spaces only, length between 4 and 150
     if (!preg_match('/^[\p{L}\s]+$/u', $full_name)) {
@@ -8,9 +8,9 @@ function addStafValidation($full_name , $username , $password , $address , $acti
         $errors['full_name'] = 'Full name must be between 4 and 150 characters long.';
     }
 
-    // 2) Username: length between 4 and 150
-    if (mb_strlen($username) < 4 || mb_strlen($username) > 150) {
-        $errors['username'] = 'Username must be between 4 and 150 characters long.';
+    // 2) Username: length between 3 and 150
+    if (mb_strlen($username) < 3 || mb_strlen($username) > 150) {
+        $errors['username'] = 'Username must be between 3 and 150 characters long.';
     }
 
     // 3) Password: at least 8 characters

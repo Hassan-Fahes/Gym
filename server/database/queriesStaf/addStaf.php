@@ -28,9 +28,9 @@ function addStaf($pdo , $full_name , $username , $password , $address , $active 
             $responseLogs = logs($pdo,$created_by , "Add a new Staff") ;
             if($responseLogs == "Add Logs Successfuly"){
                 return "Add Staf Successfuly" ;
-            }else{
-                return $responseLogs ;
             }
+            return $responseLogs ;
+            
         }else{
             return "This Username is already used" ;
         }    

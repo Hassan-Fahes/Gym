@@ -1,7 +1,7 @@
 <?php
 function allCategories($pdo){
     try{
-        $sql = "SELECT * FROM `categories`" ;
+        $sql = "SELECT * FROM `categories` WHERE is_deleted = 0" ;
         $stmt = $pdo->prepare($sql) ;
         $stmt->execute() ;
         $categories = $stmt->fetchAll(PDO::FETCH_ASSOC) ;
