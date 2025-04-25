@@ -16,6 +16,6 @@ function updateMember($pdo , $full_name , $address , $contact , $member_id , $cr
         }
         return $responseLogs ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }
 }

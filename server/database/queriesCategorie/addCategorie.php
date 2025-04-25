@@ -14,6 +14,6 @@ function addCategorie($pdo , $categorie_name , $cost , $created_by) {
         }
         return $responseLogs ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }    
 }

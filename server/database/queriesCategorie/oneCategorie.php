@@ -8,6 +8,6 @@ function oneCategorie($pdo , $categorie_id) {
         $categorie = $stmt->fetch(PDO::FETCH_ASSOC) ;
         return [true , $categorie] ;
     }catch(PDOException $e){
-        return  [false , $e] ;
+        return  [false , $e->getMessage()] ;
     }
 }

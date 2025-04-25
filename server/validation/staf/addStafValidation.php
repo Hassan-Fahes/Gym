@@ -2,11 +2,11 @@
 function addStafValidation($full_name , $username , $password, $address , $active , $contact ,$role) {
     $errors = [] ;
    // 1) Full Name: letters and spaces only, length between 4 and 150
-    if (!preg_match('/^[\p{L}\s]+$/u', $full_name)) {
-        $errors['full_name'] = 'Full name must contain only letters and spaces.';
-    } elseif (mb_strlen($full_name) < 4 || mb_strlen($full_name) > 150) {
+    if (mb_strlen($full_name) < 4 || mb_strlen($full_name) > 150) {
         $errors['full_name'] = 'Full name must be between 4 and 150 characters long.';
-    }
+    }else if (!preg_match('/^[\p{L}\s]+$/u', $full_name)) {
+        $errors['full_name'] = 'Full name must contain only letters and spaces.';
+    } 
 
     // 2) Username: length between 3 and 150
     if (mb_strlen($username) < 3 || mb_strlen($username) > 150) {

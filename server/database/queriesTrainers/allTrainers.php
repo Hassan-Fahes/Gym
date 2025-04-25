@@ -11,6 +11,6 @@ function allTrainers($pdo) {
         }
         return [false , "Empty"] ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }
 }

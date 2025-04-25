@@ -11,6 +11,8 @@ function removeMember($pdo , $member_id , $created_by) {
             return "Remove Member Successfuly" ;
         }
         return $responseLogs ;
-    }catch(PDOException $e){}
+    }catch(PDOException $e){
+        return $e->getMessage() ;
+    }
     
 }

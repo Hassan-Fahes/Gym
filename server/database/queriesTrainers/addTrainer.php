@@ -14,6 +14,6 @@ function addTrainer($pdo , $full_name ,$contact , $created_by) {
         }
         return $responseLogs ;
     }catch(PDOException){
-        return $e ;
+        return $e->getMessage() ;
     }
 }

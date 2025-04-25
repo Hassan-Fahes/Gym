@@ -8,6 +8,6 @@ function oneMember($pdo , $member_id) {
         $member = $stmt->fetch(PDO::FETCH_ASSOC) ;
         return [true , $member] ;
     }catch(PDOException $e){
-        return  [false , $e] ;
+        return  [false , $e->getMessage()] ;
     }
 }

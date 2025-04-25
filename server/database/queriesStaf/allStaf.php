@@ -11,6 +11,6 @@ function allStaf($pdo){
             return [false , "Empty"] ;
         }
     }catch(PDOException $e){
-        return [false , $e] ;
+        return [false , $e->getMessage()] ;
     }
 }

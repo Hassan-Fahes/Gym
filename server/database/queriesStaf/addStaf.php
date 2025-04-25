@@ -35,7 +35,7 @@ function addStaf($pdo , $full_name , $username , $password , $address , $active 
             return "This Username is already used" ;
         }    
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }
     
 }

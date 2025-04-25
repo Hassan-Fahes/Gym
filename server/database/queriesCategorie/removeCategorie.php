@@ -12,6 +12,6 @@ function removeCategorie($pdo , $categorie_id , $created_by) {
         }
         return $responseLogs ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }
 }

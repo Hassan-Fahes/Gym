@@ -23,7 +23,7 @@ function addSubscription($pdo , $member_id , $categorie_id , $month , $note , $c
         $stmt->execute() ;
         return "Add Subscription Successfuly" ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }
    
 }

@@ -10,6 +10,6 @@ function allCategories($pdo){
         }
         return [false , "Empty"] ;
     }catch(PDOException $e){
-        return [false , $e] ;
+        return [false , $e->getMessage()] ;
     }
 }

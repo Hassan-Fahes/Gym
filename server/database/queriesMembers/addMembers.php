@@ -12,7 +12,7 @@ function addMembers($pdo , $full_name , $address , $contact , $created_by){
         $member_id = $pdo->lastInsertId();
         return [$member_id , "Add Members Successfuly"] ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }
     
 }

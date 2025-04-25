@@ -1,7 +1,7 @@
 <?php 
 function checkStafId($pdo , $staf_id){
     try{
-        $sql = "SELECT * FROM users WHERE id = :staf_id" ;
+        $sql = "SELECT * FROM users WHERE id = :staf_id AND is_deleted = 0" ;
         $stmt = $pdo->prepare($sql) ;
         $stmt->bindParam(":staf_id" , $staf_id) ;
         $stmt->execute() ;
@@ -11,6 +11,6 @@ function checkStafId($pdo , $staf_id){
         }
         return false ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }
 }

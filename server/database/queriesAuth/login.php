@@ -15,6 +15,6 @@ function login($username, $password){
     }
 
     } catch (PDOException $e) {
-        return $e;
+        return $e->getMessage();
     }
 }

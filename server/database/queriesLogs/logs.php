@@ -8,6 +8,6 @@ function logs($pdo ,$user_id , $action_description){
         $stmt->execute() ; 
         return "Add Logs Successfuly" ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }   
 }

@@ -8,6 +8,6 @@ function oneStaf($pdo , $staf_id) {
         $staf = $stmt->fetch(PDO::FETCH_ASSOC) ;
         return [true , $staf] ;
     }catch(PDOException $e){
-        return  [false , $e] ;
+        return  [false , $e->getMessage()] ;
     }
 }

@@ -34,6 +34,6 @@ function updateSatf($pdo , $full_name , $password , $address , $active , $contac
         return "Update Staf Successfuly" ;
         
     }catch(PDOException $e){
-        return $e ; 
+        return $e->getMessage() ;
     }
 }

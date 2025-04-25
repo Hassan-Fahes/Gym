@@ -15,6 +15,6 @@ function updateCategorie($pdo , $categorie_name , $cost , $categorie_id , $creat
         }
         return $responseLogs ;
     }catch(PDOException $e){
-        return $e ;
+        return $e->getMessage() ;
     }
 }
