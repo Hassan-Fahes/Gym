@@ -37,7 +37,8 @@ if($true) {
         if($response_from_databse_subscription == "Add Subscription Successfuly"){
             // Insert Payment to Database
             require_once __DIR__ . "/../../database/queriesPayment/addPayment.php" ;
-            $response_from_databse_payment = addPayment($pdo , $paid , $response_from_databse_members[0] , $user->id ) ;
+            $message = "Add a new members and Subscription and Payment" ;
+            $response_from_databse_payment = addPayment($pdo , $paid , $response_from_databse_members[0] , $user->id , $message) ;
             if($response_from_databse_payment == "Add Payment Successfuly"){
                 echo json_encode(["status" => "success" , "message" => $response_from_databse_members[1]]);
                 die() ;

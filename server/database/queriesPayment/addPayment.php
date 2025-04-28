@@ -1,5 +1,5 @@
 <?php
-function addPayment($pdo , $paid , $member_id , $created_by){
+function addPayment($pdo , $paid , $member_id , $created_by , $message){
     try{
         $subscription = "subscription"; 
         $payment_date = date('Y-m-d') ;
@@ -13,7 +13,7 @@ function addPayment($pdo , $paid , $member_id , $created_by){
         $stmt->bindParam(":created_by" , $created_by) ;
         $stmt->execute() ;
         require_once __DIR__ . "/../queriesLogs/logs.php" ;
-        $responseLogs = logs($pdo,$created_by , "Add a new members and subscription and payment") ;
+        $responseLogs = logs($pdo,$created_by , $message) ;
         if($responseLogs == "Add Logs Successfuly"){
             return "Add Payment Successfuly" ;
         }
